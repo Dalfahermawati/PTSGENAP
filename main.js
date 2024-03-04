@@ -57,7 +57,8 @@ export async function tambahPembeli(nama, alamat, noTlpn) {
   } catch (e) {
     console.log('gagal menambah pembeli ' + e);
   }
-  
-  export async function hapusPembeli(docId) {
-      await deleteDoc(doc(db, "pembeli", docId));
+}
+
+export async function hapusPembeli(docId) {
+  await deleteDoc(doc(db, "pembeli", docId));
 }
