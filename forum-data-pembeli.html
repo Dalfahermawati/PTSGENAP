@@ -13,37 +13,37 @@
 </head>
 
 <body class="m-3">
-   <h1>Form Produk</h1>
+   <h1>Form Pembeli</h1>
    
      <form class="mb-3">
        <div class="mb-3">
-         <label class="form-label">Nama Produk</label>
+         <label class="form-label">Nama Pembeli</label>
          <input type="text" class="form-control" id="input-nama">
        </div>
           <div class="mb-3">
-         <label class="form-label">Harga</label>
-         <input type="text" class="form-control" id="input-harga">
+         <label class="form-label">Alamat</label>
+         <input type="text" class="form-control" id="input-alamat">
        </div>
           <div class="mb-3">
-            <label class="form-label">stok</label>
-            <input type="text" class="form-control" id="input-stok">
+            <label class="form-label">No.Tlpn</label>
+            <input type="text" class="form-control" id="input-noTlpn">
           </div>
        <button type="submit" class="btn btn-primary" id="tombol-tambah">Simpan</button>
      </form>
    
-   <a href="index.html">Daftar Data Ashelole</a>
+   <a href="index.html">Daftar Data Pembeli</a>
    
    <script type="module">
-     import { tambahProduk } from './main.js';
+     import { tambahPembeli } from './main.js';
      
      let tombolTambah = document.getElementById('tombol-tambah');
      let elemenNamaProduk = document.getElementById('input-nama');
-     let elemenHarga = document.getElementById('input-harga');
-     let elemenStok = document.getElementById('input-stok');
+     let elemenHarga = document.getElementById('input-alamat');
+     let elemenStok = document.getElementById('input-noTlpn');
      
      tombolTambah.addEventListener('click', async function (e) {
        e.preventDefault();
-       await tambahProduk(elemenNamaProduk.value, elemenHarga.value, elemenStok.value );
+       await tambahPembeli(elemenNamaPembeli.value, elemenAlamat.value, elemenNoTlpn.value );
        window.location.href = 'index.html'
      })
    </script>

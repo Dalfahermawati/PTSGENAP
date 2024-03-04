@@ -53,8 +53,8 @@ export async function tambahDataPembeli(nama, alamat, noTlpn) {
       alamat: alamat,
       noTlpn: noTlpn
     });
-    console.log('berhasil menembah produk ' + dokRef.id);
+    console.log('berhasil menembah pembeli ' + dokRef.id);
   } catch (e) {
-    console.log('gagal menambah produk ' + e);
+    console.log('gagal menambah pembeli ' + e);
   }
 }
