@@ -33,9 +33,9 @@ export async function ambilDataPembeli() {
   cuplikanKuery.forEach((dok) => {
     hasil.push({
       id: dok.id,
-      nama: dok.data().nama,
-      harga: dok.data().alamat,
-      stok: dok.data().No.Tlpn,
+      nama: dok.data().namaPembeli,
+      alamat: dok.data().alamat,
+      noTlpn: dok.data().no.Tlpn,
     });
   });
 
