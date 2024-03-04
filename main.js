@@ -33,7 +33,7 @@ export async function ambilDataPembeli() {
   cuplikanKuery.forEach((dok) => {
     hasil.push({
       id: dok.id,
-      nama: dok.data().namaPembeli,
+      nama: dok.data().nama,
       harga: dok.data().alamat,
       stok: dok.data().No.Tlpn,
     });
@@ -48,10 +48,10 @@ export function formatAngka(x) {
 
 export async function tambahDataPembeli(namaPembeli, alamat, NoTlpn) {
   try {
-    const dokRef = await addDoc(collection(db, 'produk'), {
+    const dokRef = await addDoc(collection(db, 'pembeli'), {
       nama: nama,
       harga: alamat,
-      stok: No.Tlpn
+      stok: NoTlpn
     });
     console.log('Berhasil menampilkan data pembeli' + dokRef.id);
   } catch (e) {

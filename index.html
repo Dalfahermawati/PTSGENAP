@@ -28,8 +28,6 @@
     </tbody>
   </table>
   
-  <img src="loader.gif" style="width: 10em; display: block" id="loader">
-  
   <a href="form-ptsgenap.html">Tambah Data Pembeli</a>
   
   <script type="module">
@@ -45,14 +43,13 @@
           '<tr>' +
           '<th>' + nomor + '</th>' +
           '<td>' + data.nama + '</td>' +
-          '<td>' + formatAngka(data.alamat) + '</td>' +
+          '<td>' + data.alamat + '</td>' +
           '<td>' + data.no.tlpn + '</td>' +
           '</tr>'
           );
           nomor = nomor + 1;
       });
       
-      $('#loader').hide();
       
     });
   </script>
