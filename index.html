@@ -14,7 +14,7 @@
 <body>
   <h1>Daftar Pembeli</h1>
   
-  <table class="table" id="daftar-produk">
+  <table class="table" id="daftar-pembeli">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -33,20 +33,20 @@
   <a href="form-ptsgenap.html">Tambah Data Pembeli</a>
   
   <script type="module">
-    import { ambilDaftarProduk, formatAngka } from './main.js';
+    import { ambilDataPembeli, formatAngka } from './main.js';
     
     $(document).ready(async function() {
       let elemenDaftar = $("#daftar-produk > tbody");
-      let daftarProduk = await ambilDaftarProduk();
+      let daftarProduk = await ambilDataPembeli();
       let nomor = 1;
       
-      daftarProduk.forEach((data) => {
+      daftarPembeli.forEach((data) => {
         elemenDaftar.append(
           '<tr>' +
           '<th>' + nomor + '</th>' +
           '<td>' + data.nama + '</td>' +
-          '<td>' + formatAngka(data.harga) + '</td>' +
-          '<td>' + data.stok + '</td>' +
+          '<td>' + formatAngka(data.alamat) + '</td>' +
+          '<td>' + data.no.tlpn + '</td>' +
           '</tr>'
           );
           nomor = nomor + 1;
