@@ -24,16 +24,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-export async function ambilDataPembeli() {
+export async function ambilDaftarPembeli() {
   const refDokumen = collection(db, "pembeli");
-  const kuery = query(refDokumen, orderBy("nama"));
-  const cuplikanKuery = await getDocs(kuery);
+  const kueri = query(refDokumen, orderBy("nama"));
+  const cuplikanKueri = await getDocs(kueri);
 
   let hasil = [];
-  cuplikanKuery.forEach((dok) => {
+  cuplikanKueri.forEach((dok) => {
     hasil.push({
       id: dok.id,
-      nama: dok.data().namaPembeli,
+      nama: dok.data().nama,
       alamat: dok.data().alamat,
       noTlpn: dok.data().noTlpn,
     });
@@ -46,15 +46,15 @@ export function formatAngka(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-export async function tambahDataPembeli(namaPembeli, alamat, noTlpn) {
+export async function tambahDataPembeli(nama, alamat, noTlpn) {
   try {
     const dokRef = await addDoc(collection(db, 'pembeli'), {
       nama: nama,
       alamat: alamat,
       noTlpn: noTlpn
     });
-    console.log('Berhasil menampilkan data pembeli' + dokRef.id);
+    console.log('berhasil menembah produk ' + dokRef.id);
   } catch (e) {
-    console.log('Gagal menambah data pembeli ' + e);
+    console.log('gagal menambah produk ' + e);
   }
 }
