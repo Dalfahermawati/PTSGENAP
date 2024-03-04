@@ -25,7 +25,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export async function ambilDataPembeli() {
-  const refDokumen = collection(db, "ptsgenap");
+  const refDokumen = collection(db, "pembeli");
   const kuery = query(refDokumen, orderBy("nama"));
   const cuplikanKuery = await getDocs(kuery);
 
@@ -46,7 +46,7 @@ export function formatAngka(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
-export async function tambahDataPembeli(namaPembeli, alamat, No.Tlpn) {
+export async function tambahDataPembeli(namaPembeli, alamat, NoTlpn) {
   try {
     const dokRef = await addDoc(collection(db, 'produk'), {
       nama: nama,
