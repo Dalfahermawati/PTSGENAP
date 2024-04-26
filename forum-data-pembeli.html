@@ -51,7 +51,7 @@
      
      tombolTambah.addEventListener('click', async function (e) {
        e.preventDefault();
-       await tambahPembeli(elemenNamaPembeli.value, elemenAlamat.value, elemenNoTlpn.value );
+       await ubahPembeli(docId, elemenNamaPembeli.value, elemenAlamat.value, elemenNoTlpn.value);
        window.location.href = 'index.html';
      });
    </script>

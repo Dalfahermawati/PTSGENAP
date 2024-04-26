@@ -63,10 +63,12 @@ export async function hapusPembeli(docId) {
   await deleteDoc(doc(db, "pembeli", docId));
 }
 
-export async function ubahPembeli(docId, val) {
-  await updateDoc(doc(db, "pembeli", docId), { nama: nama,
+export async function ubahPembeli(docId, nama, alamat, noTlpn) {
+    await updateDoc(doc(db, "pembeli", docId), {
+      nama: nama,
       alamat: alamat,
-      noTlpn: noTlpn });
+      noTlpn: noTlpn
+    });
 }
 
 export async function ambilPembali(docId) {
