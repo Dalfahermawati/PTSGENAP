@@ -40,12 +40,18 @@
      let elemenNamaPembeli = document.getElementById('input-nama');
      let elemenAlamat = document.getElementById('input-alamat');
      let elemenNoTlpn = document.getElementById('input-noTlpn');
+     const queryString = window.location.search
+     const parameterURL = new URLSearchParams(queryString);
+     const docId = parameterURL.get('docId')
+     const pembeli = await ambilDaftarPembeli(docId);
+
+     elemenNamaPembeli.value = pembeli.nama;
      
      tombolTambah.addEventListener('click', async function (e) {
        e.preventDefault();
        await tambahPembeli(elemenNamaPembeli.value, elemenAlamat.value, elemenNoTlpn.value );
-       window.location.href = 'index.html'
-     })
+       window.location.href = 'index.html';
+     });
    </script>
    
 </body>
