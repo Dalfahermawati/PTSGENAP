@@ -39,33 +39,37 @@ export async function ambilDaftarPembeli() {
 export function formatAngka(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
-export async function tambahPembeli(nama, alamat, noTlpn) 
-    try {
-      const dokRef = await addDoc(collection(db, 'pembeli'), {
-        nama: nama,
-        alamat: alamat,
-        noTlpn: noTlpn
-      });
-      console.log('berhasil menembah pembeli ' + dokRef.id); }
-      
-    catch (e) {
-      console.log('gagal menambah pembeli ' + e);
-    }
-    export async function hapusPembeli(docId) {
-      await deleteDoc(doc(db, "pembeli", docId));
-    }
-    
-    export async function ubahPembeli(docId, nama, alamat, noTlpn) {
-      await updateDoc(doc(db, "pembeli", docId), {
-        nama: nama,
-        alamat: alamat,
-        noTlpn: noTlpn
-      });
-    }
-    
-    export async function ambilPembeli(docId) {
-      const docRef = await doc(db, "pembeli", docId);
-      const docSnap = await getDoc(docRef);
-    
-      return await docSnap.data();
-    }
+export async function tambahPembeli(nama, alamat, noTlpn) {
+  try {
+    const dokRef = await addDoc(collection(db, 'pembeli'), {
+      nama: nama,
+      alamat: alamat,
+      noTlpn: noTlpn
+    });
+    console.log('berhasil menambah pembeli ' + dokRef.id);
+  }
+
+  catch (e) {
+    console.log('gagal menambah pembeli ' + e);
+  }
+
+}
+
+export async function hapusPembeli(docId) {
+  await deleteDoc(doc(db, "pembeli", docId));
+}
+
+export async function ubahPembeli(docId, nama, alamat, noTlpn) {
+  await updateDoc(doc(db, "pembeli", docId), {
+    nama: nama,
+    alamat: alamat,
+    noTlpn: noTlpn
+  });
+}
+
+export async function ambilPembeli(docId) {
+  const docRef = await doc(db, "pembeli", docId);
+  const docSnap = await getDoc(docRef);
+
+  return await docSnap.data();
+}
