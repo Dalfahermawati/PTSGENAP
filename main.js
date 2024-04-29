@@ -46,8 +46,8 @@ export async function tambahPembeli(nama, alamat, noTlpn)
         alamat: alamat,
         noTlpn: noTlpn
       });
-      console.log('berhasil menembah pembeli ' + dokRef.id);
-    }
+      console.log('berhasil menembah pembeli ' + dokRef.id); }
+      
     catch (e) {
       console.log('gagal menambah pembeli ' + e);
     }
@@ -57,9 +57,9 @@ export async function tambahPembeli(nama, alamat, noTlpn)
     
     export async function ubahPembeli(docId, nama, alamat, noTlpn) {
       await updateDoc(doc(db, "pembeli", docId), {
-        nama; nama,
-        alamat; alamat,
-        noTlpn; noTlpn
+        nama: nama,
+        alamat: alamat,
+        noTlpn: noTlpn
       });
     }
     
