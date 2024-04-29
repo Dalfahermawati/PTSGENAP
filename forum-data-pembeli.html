@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +10,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     
 </head>
-
 <body class="m-3">
    <h1>Form Pembeli</h1>
    
@@ -34,28 +32,19 @@
    <a href="index.html">Daftar Data Pembeli</a>
    
    <script type="module">
-     import { ambilPembeli, ubahPembeli } from './main.js';
-     
+     import { tambahPembeli } from './main.js';
+
      let tombolTambah = document.getElementById('tombol-tambah');
      let elemenNamaPembeli = document.getElementById('input-nama');
      let elemenAlamat = document.getElementById('input-alamat');
      let elemenNoTlpn = document.getElementById('input-noTlpn');
-     const queryString = window.location.search
-     const parameterURL = new URLSearchParams(queryString);
-     const docId = parameterURL.get('docId')
-     const pembeli = await ambilPembeli(docId);
 
-     elemenNamaPembeli.value = pembeli.nama;
-     elemenAlamat.value = pembeli.alamat;
-     elemenNoTlpn.value = pembeli.noTlpn;
-     
      tombolTambah.addEventListener('click', async function (e) {
        e.preventDefault();
-       await ubahPembeli(docId, elemenNamaPembeli.value, elemenAlamat.value, elemenNoTlpn.value);
-       window.location.href = 'index.html';
-     });
+       await tambahPembeli(elemenNamaPembeli.value, elemenAlamat.value, elemenNoTlpn.value );
+       window.location.href = 'index.html'
+     })
    </script>
    
 </body>
-
 </html>
